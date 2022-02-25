@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivysettings>
- <property name="httpclient.version" value="4.5.8"/>
- <property name="httpclient.httpcore.version" value="4.4.11"/>
- <property name="httpclient.async.version" value="4.1.4"/>
+  <property name="httpclient.version" value="4.5.8" />
+  <property name="httpclient.httpcore.version" value="4.4.11" />
+  <property name="httpclient.async.version" value="4.1.4" />
 
- <property name="dom4j.version" value="2.1.1"/>
- <property name="com.google.guava.version" value="28.1-jre"/>
+  <property name="dom4j.version" value="2.1.1" />
+  <property name="com.google.guava.version" value="28.1-jre" />
 
-<settings defaultResolver="chain-resolver" />
-  <caches defaultCacheDir="${dev.home}/.ivy2/cache"/>
+  <settings defaultResolver="chain-resolver" />
+  <caches defaultCacheDir="${dev.home}/.ivy2/cache" />
   <resolvers>
     <chain name="chain-resolver" returnFirst="true">
       <filesystem name="local">
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].[ext]" />
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation]-[revision].[ext]" />
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation].[ext]" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].[ext]" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation]-[revision].[ext]" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation].[ext]" />
       </filesystem>
       <url name="maven-https-org">
         <artifact pattern="https://repo1.maven.org/maven2/[organization]/[module]/[revision]/[artifact]-[revision].[ext]" />
@@ -22,14 +22,11 @@
       <url name="maven-https-orgPath">
         <artifact pattern="https://repo1.maven.org/maven2/[orgPath]/[module]/[revision]/[artifact]-[revision].[ext]" />
       </url>
-      <url name="bedatadriven-https-orgPath">
-        <artifact pattern="https://nexus.bedatadriven.com/content/groups/public/[orgPath]/[module]/[revision]/[artifact]-[revision].[ext]" />
-      </url>
       <url name="liferay-https-orgPath">
         <artifact pattern="https://repository.liferay.com/nexus/content/repositories/public/[orgPath]/[module]/[revision]/[artifact]-[revision].[ext]" />
       </url>
-      <ibiblio name="maven" m2compatible="true" usepoms="false"/>
-      <ibiblio name="maven-redhat" root="https://maven.repository.redhat.com/ga/" pattern="[organisation]/[module]/[revision]/[module]-[revision].[ext]"/>
+      <ibiblio name="maven" m2compatible="true" usepoms="false" />
+      <ibiblio name="maven-redhat" root="https://maven.repository.redhat.com/ga/" pattern="[organisation]/[module]/[revision]/[module]-[revision].[ext]" />
       <url name="zimbra">
         <artifact pattern="https://files.zimbra.com/repository/[module]/[artifact]-[revision].[ext]" />
         <artifact pattern="https://files.zimbra.com/repository/[module]/[artifact].[ext]" />
@@ -40,10 +37,10 @@
       <filesystem name="local">
         <!-- ivy:install with zip artifacts was failing some times so had to add this line to fix it -->
         <!-- http://grokbase.com/t/ant/ivy-user/086ct4mr6h/newbie-cant-resolve-zip-files -->
-        <ivy pattern= "${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].xml" />
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].[ext]" />
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation]-[revision].[ext]" />
-        <artifact pattern= "${dev.home}/.zcs-deps/[organisation].[ext]" />
+        <ivy pattern="${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].xml" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation]/[module]/[module]-[revision].[ext]" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation]-[revision].[ext]" />
+        <artifact pattern="${dev.home}/.zcs-deps/[organisation].[ext]" />
       </filesystem>
     </chain>
     <!-- 'build-tmp' resolver is not part of the chain and is used only for packaging war files -->
@@ -55,6 +52,6 @@
     </filesystem>
   </resolvers>
   <modules>
-    <module organisation="xerces" name="xercesImpl" revision="2.9.1-patch-01" resolver="maven-redhat"/>
+    <module organisation="xerces" name="xercesImpl" revision="2.9.1-patch-01" resolver="maven-redhat" />
   </modules>
 </ivysettings>
